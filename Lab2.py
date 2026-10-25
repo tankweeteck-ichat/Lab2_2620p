@@ -43,6 +43,13 @@ def sort_temperature(numlist):
 
 def calc_median_temperature(numlist):
     print(">>> calc_media_temperature")
+    sortedlist = sort_temperature(numlist)
+    count = len(sortedlist)
+    if (count%2 == 1):  # Odd number
+        median = sortedlist[(count-1)//2]
+    else:
+        median = (sortedlist[count//2 - 1] + sortedlist[count//2])/2
+    return median
 
 
 
@@ -60,8 +67,8 @@ def main():
     print("Max = ", MinMax[-1])
     sorted = sort_temperature(num_list)
     print("Sorted Temperature: ", sorted)
-    #median = calc_median_temperature(num_list)
-    #print("Median = ", f"{median:0.2f}")
+    median = calc_median_temperature(num_list)
+    print("Median = ", f"{median:0.2f}")
 
 
 
